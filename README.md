@@ -11,26 +11,6 @@ Bienvenue sur le dépôt GitHub de notre **Template de RageUI** ! Ce modèle est
 - **Fichiers client et serveur triés** : Des scripts séparés en fonction de leur côté d'exécution (client ou serveur) pour une meilleure organisation et maintenabilité du code.
 - **RageUI avec options de personnalisation** : Intégration complète de RageUI avec des paramètres configurables directement via le fichier `config.lua`.
 
-## Structure du projet
-
-RageUITemplate/
-│
-├── fxmanifest.lua
-├── config.lua
-├── locales/ # Contient les fichiers de traduction
-│ ├── en.lua
-│ ├── fr.lua
-│ └── (autres langues).lua
-│
-├── client/ # Contient tous les scripts client-side
-│ ├── cl_main.lua
-│ └── (autres scripts client)
-│
-├── server/ # Contient tous les scripts server-side
-│ ├── sv_main.lua
-│ └── (autres scripts serveur)
-└──
-
 ## Caractéristiques
 
 - **Facile à configurer** : Toutes les options de personnalisation sont centralisées dans le fichier `config.lua`.
@@ -41,11 +21,13 @@ RageUITemplate/
 ## Installation
 
 1. Clonez ce dépôt dans votre répertoire `resources` de FiveM.
+   
    ```bash
    git clone https://github.com/votre-utilisateur/RageUITemplate.git
    ```
-2. Ouvrez `config.lua` et ajustez les paramètres selon vos besoins.
-3. Ajoutez la ressource à votre `server.cfg`.
+3. Ouvrez `config.lua` et ajustez les paramètres selon vos besoins.
+4. Ajoutez la ressource à votre `server.cfg`.
+   
    ```bash
    ensure RageUITemplate 
    ```
