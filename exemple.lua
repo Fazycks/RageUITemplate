@@ -1,9 +1,12 @@
 ESX = exports["es_extended"]:getSharedObject()
 
-local MainMenu = RageUI.CreateMenu("Title", "SUBTITLE");
-MainMenu.EnableMouse = true;
+local MainMenu = RageUI.CreateMenu("Title", "SUBTITLE")
+local openMainMenu = false
+
+MainMenu.EnableMouse = true
 
 local SubMenu = RageUI.CreateSubMenu(MainMenu, "Title", "SubTitle")
+local openSubMenu = false
 
 local Checked = false;
 local ListIndex = 1;
@@ -11,6 +14,15 @@ local ListIndex = 1;
 local GridX, GridY = 0, 0
 
 function RageUI.PoolMenus:Example()
+
+	function MainMenu.Closed()
+		openMainMenu = false
+	end
+
+	function SubMenu.Closed()
+		openSubMenu = false
+	end
+
 	MainMenu:IsVisible(function(Items)
 		Items:Heritage(1, 2)
 		Items:AddButton("Sub Menu", "Sub Menu", { IsDisabled = false }, function(onSelected)
@@ -50,5 +62,6 @@ function RageUI.PoolMenus:Example()
 end
 
 Keys.Register("F6", "F6", "Exemple Menu", function()
+	openMainMenu = true
 	RageUI.Visible(MainMenu, not RageUI.Visible(MainMenu))
 end)
