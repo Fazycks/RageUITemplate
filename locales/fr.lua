@@ -1,3 +1,3 @@
 Locales["fr"] = {
-    
+    ["exemple"] = "Exemple",
 }

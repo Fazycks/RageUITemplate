@@ -1,8 +1,6 @@
 Config = {}
 Config.Locale = "fr"
-Config.SetSubTitleForMenu = false
-
-
+Config.SetSubTitleForMenu = true
 
 Config.DisplayText = function(text)
     SetTextComponentFormat("STRING")

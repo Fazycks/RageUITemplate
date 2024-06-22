@@ -23,6 +23,6 @@ server_scripts {
 
 shared_scripts {
     "config.lua",
-    "locales/*.lua",
     "trad.lua",
+    "locales/*.lua",
 }

@@ -1,17 +1,13 @@
-ESX = exports["es_extended"]:getSharedObject()
-
-local MainMenu = RageUI.CreateMenu("Title", "SUBTITLE")
+local MainMenu = RageUI.CreateMenu("Titre", "Sous titre")
 local openMainMenu = false
 
-MainMenu.EnableMouse = true
+MainMenu.EnableMouse = false
 
-local SubMenu = RageUI.CreateSubMenu(MainMenu, "Title", "SubTitle")
+local SubMenu = RageUI.CreateSubMenu(MainMenu, "Titre", "Sous titre")
 local openSubMenu = false
 
 local Checked = false;
 local ListIndex = 1;
-
-local GridX, GridY = 0, 0
 
 function RageUI.PoolMenus:Example()
 
@@ -24,40 +20,32 @@ function RageUI.PoolMenus:Example()
 	end
 
 	MainMenu:IsVisible(function(Items)
-		Items:Heritage(1, 2)
-		Items:AddButton("Sub Menu", "Sub Menu", { IsDisabled = false }, function(onSelected)
-	
-		end, SubMenu)
-		Items:AddButton("Hello world", "Hello world.", { IsDisabled = false }, function(onSelected)
 
-		end)
+		Items:AddButton("Autre menu", "Petite description", {IsDisabled = false}, function(onSelected) end, SubMenu)
+
+		Items:AddButton("Titre bouton", nil, {RightLabel = "→→", IsDisabled = false}, function(onSelected) end)
+
 		Items:AddList("List", { 1, 2, 3 }, ListIndex, ListIndex, nil, { IsDisabled = false }, function(Index, onSelected, onListChange)
 			if (onListChange) then
 				ListIndex = Index;
 			end
 		end)
-		Items:AddSeparator("Separator")
-		Items:CheckBox("Hello", "Descriptions", Checked, { Style = 1 }, function(onSelected, IsChecked)
+
+		Items:AddSeparator(_U("exemple"))
+
+		Items:CheckBox("Activer", "Petite description", Checked, { Style = 1 }, function(onSelected, IsChecked)
 			if (onSelected) then
 				Checked = IsChecked
 			end
 		end)
 
-
-	end, function(Panels)
-		Panels:Grid(GridX, GridY, "Top", "Bottom", "Left", "Right", function(X, Y, CharacterX, CharacterY)
-			GridX = X;
-			GridY = Y;
-		end, 1)
+	end, function()
 	end)
 
 	SubMenu:IsVisible(function(Items)
 		-- Items
-		Items:AddButton("Hello world", "Hello world.", { IsDisabled = false }, function(onSelected)
-
-		end)
+		Items:AddButton("Titre bouton", "Petite description", { IsDisabled = false }, function(onSelected) end)
 	end, function()
-		-- Panels
 	end)
 end
 

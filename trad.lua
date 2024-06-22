@@ -12,6 +12,6 @@ function _(str, ...)
     end
 end
 
-function Translate(str, ...)
+function _U(str, ...)
     return tostring(_(str, ...):gsub("^%l", string.upper))
 end
