@@ -23,7 +23,7 @@ Bienvenue sur le dépôt GitHub de notre **Template de RageUI** ! Ce modèle est
 1. Clonez ce dépôt dans votre répertoire `resources` de FiveM.
    
    ```bash
-   git clone https://github.com/votre-utilisateur/RageUITemplate.git
+   git clone https://github.com/Fazycks/RageUITemplate.git
    ```
 3. Ouvrez `config.lua` et ajustez les paramètres selon vos besoins.
 4. Ajoutez la ressource à votre `server.cfg`.
